@@ -1,9 +1,11 @@
 import * as React from "react";
 import Head from "next/head";
-import { NativeBaseProvider } from "native-base";
-import { theme } from "../theme";
+import { NativeBaseProvider, extendTheme } from "native-base";
+import { theme } from "../../../common/lib/module/index";
 
 function MyApp({ Component, pageProps }) {
+  const Theme = extendTheme(theme);
+
   return (
     <>
       <Head>
@@ -14,7 +16,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <NativeBaseProvider theme={theme}>
+      <NativeBaseProvider theme={Theme}>
         <Component {...pageProps} />
       </NativeBaseProvider>
     </>

@@ -1,1 +1,0 @@
-{"version":3,"sources":["Button.js"],"names":["Button","props"],"mappings":";;;;;;;AAAA;;AACA;;;;AAEO,MAAMA,MAAM,GAAIC,KAAD,iBAAW,6BAAC,kBAAD,EAAeA,KAAf,CAA1B","sourcesContent":["import React from \"react\";\nimport { Button as DCMButton } from \"native-base\";\n\nexport const Button = (props) => <DCMButton {...props} />;\n"]}

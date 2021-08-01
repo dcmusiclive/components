@@ -1,5 +1,4 @@
 const withPlugins = require("next-compose-plugins");
-const path = require("path");
 const withTM = require("next-transpile-modules")([
   "native-base",
   "react-native-svg",
@@ -34,9 +33,10 @@ module.exports = withPlugins([withTM], {
       ".web.tsx",
       ...config.resolve.extensions,
     ];
-    config.resolve.alias["components"] = path.resolve(
-      __dirname + "/../components/lib/commonjs/index.js"
-    );
     return config;
   },
 });
+
+module.exports.experimental = {
+  externalDir: true,
+};
