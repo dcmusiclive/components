@@ -1,5 +1,5 @@
 {
-  "name": "components",
+  "name": "@dcmusiclive/components",
   "version": "0.0.1",
   "description": "Common theme configuration for DC Music Live nativebase UI components",
   "main": "lib/commonjs/index.js",
