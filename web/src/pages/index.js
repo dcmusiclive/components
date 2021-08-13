@@ -10,21 +10,32 @@ import {
   ScrollView,
   Select,
 } from "native-base";
+import { ImageBackground } from "react-native";
 import { colors, theme } from "../../../common/lib/module/index";
-import { DisplayColors, DisplayTypography } from "../display";
+import {
+  DisplayBackground,
+  DisplayColors,
+  DisplayTypography,
+} from "../display";
 
 // Start editing here, save and see your changes.
 export default function App() {
   const [display, setDisplay] = useState("Colors");
+
   return (
-    <ScrollView _dark={{ bg: "blueGray.900" }} _light={{ bg: "blueGray.50" }}>
-      <Box p={20}>
+    <ScrollView
+      _dark={{ bg: "blueGray.900" }}
+      _light={{ bg: "blueGray.50" }}
+      height={"100%"}
+    >
+      <Box p={20} height={"100%"}>
         <Select
           width={500}
           marginBottom={8}
           selectedValue={display}
           onValueChange={(itemValue) => setDisplay(itemValue)}
         >
+          <Select.Item label="Background" value="Background" />
           <Select.Item label="Colors" value="Colors" />
           <Select.Item label="Typography" value="Typography" />
         </Select>
@@ -33,6 +44,7 @@ export default function App() {
           <DisplayColors colors={colors} theme={theme} />
         )}
         {display === "Typography" && <DisplayTypography />}
+        {display === "Background" && <DisplayBackground />}
       </Box>
       <ColorModeSwitch />
     </ScrollView>
