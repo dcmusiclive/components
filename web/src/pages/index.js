@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   useColorMode,
   Tooltip,
@@ -6,34 +6,33 @@ import {
   SunIcon,
   MoonIcon,
   Box,
-  Text,
   Heading,
-  Code,
-  VStack,
   ScrollView,
-  HStack,
-  SimpleGrid,
+  Select,
 } from "native-base";
 import { colors, theme } from "../../../common/lib/module/index";
+import { DisplayColors, DisplayTypography } from "../display";
 
 // Start editing here, save and see your changes.
 export default function App() {
+  const [display, setDisplay] = useState("Colors");
   return (
     <ScrollView _dark={{ bg: "blueGray.900" }} _light={{ bg: "blueGray.50" }}>
       <Box p={20}>
-        <Heading>Colors</Heading>
-        <SimpleGrid columns={3} spacingX={40} spacingY={20} mt={5}>
-          {Object.keys(colors).map((color) => (
-            <HStack space="sm" alignItems="center" w={128} h={65} key={color}>
-              <Box backgroundColor={color} h={20} w={20} />
-              <VStack space="sm">
-                <Code>{color}</Code>
-                <Text>{colors[color]}</Text>
-                <Text>{theme.colors[color]}</Text>
-              </VStack>
-            </HStack>
-          ))}
-        </SimpleGrid>
+        <Select
+          width={500}
+          marginBottom={8}
+          selectedValue={display}
+          onValueChange={(itemValue) => setDisplay(itemValue)}
+        >
+          <Select.Item label="Colors" value="Colors" />
+          <Select.Item label="Typography" value="Typography" />
+        </Select>
+        <Heading marginBottom={5}>{display}</Heading>
+        {display === "Colors" && (
+          <DisplayColors colors={colors} theme={theme} />
+        )}
+        {display === "Typography" && <DisplayTypography />}
       </Box>
       <ColorModeSwitch />
     </ScrollView>

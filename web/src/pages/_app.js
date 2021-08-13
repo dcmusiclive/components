@@ -9,10 +9,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>NaitveBase + NextJS Starter Kit</title>
-        <meta
-          name="description"
-          content="NativeBase and NextJS starter kit for rapid setup and easy development experience with NativeBase."
+        <title>DCM Components</title>
+        <meta name="description" content="DCM Components on the web" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
