@@ -24,11 +24,6 @@ const theme = {
     initialColorMode: "dark"
   },
   components: {
-    Text: {
-      highlight: {
-        color: "#202122"
-      }
-    },
     Select: {
       baseStyle: ({
         colorMode

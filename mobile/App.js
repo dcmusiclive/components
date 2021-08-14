@@ -18,15 +18,17 @@ import {
 } from 'native-base';
 import {theme, colors} from 'common';
 import {SafeAreaView} from 'react-native';
+import {DisplayBackground} from './src/display';
 
 export default function App() {
   const Theme = extendTheme(theme);
   return (
     <NativeBaseProvider theme={Theme}>
-      <ScrollView _dark={{bg: 'blueGray.900'}} _light={{bg: 'blueGray.50'}}>
+      {/* <ScrollView _dark={{bg: 'blueGray.900'}} _light={{bg: 'blueGray.50'}}>
         <SafeAreaView>
-          <Box p={3}>
-            <Heading>Colors</Heading>
+          <Heading>Background</Heading> */}
+      <DisplayBackground />
+      {/* <Heading>Colors</Heading>
             <SimpleGrid columns={1} spacingX={40} spacingY={20} mt={5}>
               {Object.keys(colors).map(color => (
                 <HStack
@@ -43,10 +45,8 @@ export default function App() {
                   </VStack>
                 </HStack>
               ))}
-            </SimpleGrid>
-          </Box>
-        </SafeAreaView>
-      </ScrollView>
+            </SimpleGrid> */}
+      {/* </SafeAreaView> */}
       <ColorModeSwitch />
     </NativeBaseProvider>
   );
