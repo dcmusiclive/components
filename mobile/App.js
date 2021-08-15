@@ -18,11 +18,12 @@ import {
   DisplayColors,
   DisplayTypographyHeadings,
   DisplayTypographyText,
+  DisplayButtons,
 } from './src/display';
 
 export default function App() {
   const Theme = extendTheme(theme);
-  const [display, setDisplay] = useState('Colors');
+  const [display, setDisplay] = useState('Buttons');
 
   return (
     <NativeBaseProvider theme={Theme}>
@@ -41,6 +42,8 @@ export default function App() {
                 <DisplayTypographyHeadings />
               ) : display === 'Typography Text' ? (
                 <DisplayTypographyText />
+              ) : display === 'Buttons' ? (
+                <DisplayButtons />
               ) : null}
             </Box>
           </SafeAreaView>
@@ -61,11 +64,15 @@ const ThemeSelector = ({display, setDisplay}) => (
     marginBottom={8}
     selectedValue={display}
     onValueChange={itemValue => setDisplay(itemValue)}>
-    {['Background', 'Colors', 'Typography Headings', 'Typography Text'].map(
-      v => (
-        <Select.Item key={v} label={v} value={v} />
-      ),
-    )}
+    {[
+      'Background',
+      'Colors',
+      'Typography Headings',
+      'Typography Text',
+      'Buttons',
+    ].map(v => (
+      <Select.Item key={v} label={v} value={v} />
+    ))}
   </Select>
 );
 

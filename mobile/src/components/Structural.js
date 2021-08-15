@@ -1,5 +1,4 @@
 import React from 'react';
-export * from 'native-base';
 import {
   Box as NBBox,
   HStack as NBHStack,

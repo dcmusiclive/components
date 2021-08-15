@@ -1,6 +1,17 @@
 export const theme = {
   colors: {
-    offWhite: "#f7f5f3",
+    offWhite: {
+      50: "#f7f5f3",
+      100: "#f7f5f3",
+      200: "#faf9f9",
+      300: "#faf9f9",
+      400: "#eeedec",
+      500: "#eeedec",
+      600: "#eeedec",
+      700: "#eeedec",
+      800: "#eeedec",
+      900: "#eeedec"
+    },
     offBlack: "#202122",
     dcRed: "#f72e2a",
     usaBlue: "#0091e6",
@@ -33,6 +44,11 @@ export const theme = {
       }),
       variants: {},
       sizes: {}
+    },
+    Button: {
+      defaultProps: {
+        borderRadius: 20
+      }
     }
   }
 };
