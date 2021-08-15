@@ -1,70 +1,86 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {theme, colors} from 'common';
 import {
+  extendTheme,
+  NativeBaseProvider,
+  Select,
+  ScrollView,
   useColorMode,
   Tooltip,
   IconButton,
   SunIcon,
   MoonIcon,
-  Box,
-  Text,
-  Heading,
-  Code,
-  VStack,
-  ScrollView,
-  HStack,
-  SimpleGrid,
-  extendTheme,
-  NativeBaseProvider,
 } from 'native-base';
-import {theme, colors} from 'common';
 import {SafeAreaView} from 'react-native';
-import {DisplayBackground} from './src/display';
+import {Text, Box} from './src/components';
+import {
+  DisplayBackground,
+  DisplayColors,
+  DisplayTypographyHeadings,
+  DisplayTypographyText,
+} from './src/display';
 
 export default function App() {
   const Theme = extendTheme(theme);
+  const [display, setDisplay] = useState('Colors');
+
   return (
     <NativeBaseProvider theme={Theme}>
-      {/* <ScrollView _dark={{bg: 'blueGray.900'}} _light={{bg: 'blueGray.50'}}>
-        <SafeAreaView>
-          <Heading>Background</Heading> */}
-      <DisplayBackground />
-      {/* <Heading>Colors</Heading>
-            <SimpleGrid columns={1} spacingX={40} spacingY={20} mt={5}>
-              {Object.keys(colors).map(color => (
-                <HStack
-                  space="sm"
-                  alignItems="center"
-                  w={128}
-                  h={65}
-                  key={color}>
-                  <Box backgroundColor={color} h={20} w={20} />
-                  <VStack space="sm">
-                    <Code>{color}</Code>
-                    <Text>{colors[color]}</Text>
-                    <Text>{theme.colors[color]}</Text>
-                  </VStack>
-                </HStack>
-              ))}
-            </SimpleGrid> */}
-      {/* </SafeAreaView> */}
-      <ColorModeSwitch />
+      {display === 'Background' ? (
+        <DisplayBackground>
+          <ThemeSelector display={display} setDisplay={setDisplay} />
+        </DisplayBackground>
+      ) : (
+        <ScrollView _dark={{bg: 'blueGray.900'}} _light={{bg: 'blueGray.50'}}>
+          <SafeAreaView>
+            <ThemeSelector display={display} setDisplay={setDisplay} />
+            <Box pt={100}>
+              {display === 'Colors' ? (
+                <DisplayColors theme={theme} colors={colors} />
+              ) : display === 'Typography Headings' ? (
+                <DisplayTypographyHeadings />
+              ) : display === 'Typography Text' ? (
+                <DisplayTypographyText />
+              ) : null}
+            </Box>
+          </SafeAreaView>
+        </ScrollView>
+      )}
+      <ThemeColorModeSwitch />
     </NativeBaseProvider>
   );
 }
 
-// Color Switch Component
-function ColorModeSwitch() {
+const ThemeSelector = ({display, setDisplay}) => (
+  <Select
+    position="absolute"
+    width={300}
+    top={50}
+    left={5}
+    zIndex={10}
+    marginBottom={8}
+    selectedValue={display}
+    onValueChange={itemValue => setDisplay(itemValue)}>
+    {['Background', 'Colors', 'Typography Headings', 'Typography Text'].map(
+      v => (
+        <Select.Item key={v} label={v} value={v} />
+      ),
+    )}
+  </Select>
+);
+
+function ThemeColorModeSwitch() {
   const {colorMode, toggleColorMode} = useColorMode();
   return (
     <Tooltip
-      label={colorMode === 'dark' ? 'Enable light mode' : 'Enable dark mode'}
-      placement="bottom right"
       openDelay={300}
-      closeOnClick={false}>
+      closeOnClick={false}
+      placement="bottom right"
+      label={colorMode === 'dark' ? 'Enable light mode.' : 'Enable dark mode.'}>
       <IconButton
         position="absolute"
         top={12}
-        right={8}
+        right={5}
         onPress={toggleColorMode}
         icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
         accessibilityLabel="Color Mode Switch"
