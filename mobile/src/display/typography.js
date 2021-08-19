@@ -4,7 +4,7 @@ import {Heading, Text} from '../components';
 
 export const DisplayTypographyHeadings = () => (
   <VStack alignSelf={{base: 'center', md: 'flex-start'}}>
-    <Heading color="usaBlue" marginTop={5} marginBottom={3}>
+    <Heading color="usaBlue.400" marginTop={5} marginBottom={3}>
       Typography Headings
     </Heading>
     {['4xl', '3xl', '2xl', 'xl', 'lg', 'md', 'sm', 'xs'].map(size => (
@@ -17,7 +17,7 @@ export const DisplayTypographyHeadings = () => (
 
 export const DisplayTypographyText = () => (
   <VStack alignSelf={{base: 'center', md: 'flex-start'}}>
-    <Heading color="usaBlue" marginTop={5} marginBottom={3}>
+    <Heading color="usaBlue.400" marginTop={5} marginBottom={3}>
       Typography Text
     </Heading>
     {['6xl', '5xl', '4xl', '3xl', '2xl', 'xl', 'lg', 'md', 'sm', 'xs'].map(
@@ -27,7 +27,7 @@ export const DisplayTypographyText = () => (
         </Text>
       ),
     )}
-    <Heading color="usaBlue" marginTop={10} marginBottom={3}>
+    <Heading color="usaBlue.400" marginTop={10} marginBottom={3}>
       Typography Text Overrides
     </Heading>
     <Text bold>Bold</Text>

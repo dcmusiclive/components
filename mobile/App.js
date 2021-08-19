@@ -12,7 +12,7 @@ import {
   MoonIcon,
 } from 'native-base';
 import {SafeAreaView} from 'react-native';
-import {Text, Box} from './src/components';
+import {Box} from './src/components';
 import {
   DisplayBackground,
   DisplayColors,
@@ -23,7 +23,7 @@ import {
 
 export default function App() {
   const Theme = extendTheme(theme);
-  const [display, setDisplay] = useState('Buttons');
+  const [display, setDisplay] = useState('Typography Headings');
 
   return (
     <NativeBaseProvider theme={Theme}>
