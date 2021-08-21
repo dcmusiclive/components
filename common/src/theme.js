@@ -1,16 +1,64 @@
 export const theme = {
   colors: {
-    offWhite: {
+    pillDefaultSolid: {
       50: "#f7f5f3",
       100: "#f7f5f3",
-      200: "#faf9f9",
-      300: "#faf9f9",
-      400: "#eeedec",
-      500: "#eeedec",
-      600: "#eeedec",
-      700: "#eeedec",
-      800: "#eeedec",
-      900: "#eeedec",
+      200: "#f7f5f3",
+      300: "#f7f5f3",
+      400: "#202122",
+      500: "#202122",
+      600: "#202122",
+      700: "#202122",
+      800: "#202122",
+      900: "#202122",
+    },
+    pillBlueSolid: {
+      50: "#0091e6",
+      100: "#0091e6",
+      200: "#0091e6",
+      300: "#0091e6",
+      400: "#0091e6",
+      500: "#0091e6",
+      600: "#0091e6",
+      700: "#0091e6",
+      800: "#0091e6",
+      900: "#0091e6",
+    },
+    pillRedSolid: {
+      50: "#f72e2a",
+      100: "#f72e2a",
+      200: "#f72e2a",
+      300: "#f72e2a",
+      400: "#f72e2a",
+      500: "#f72e2a",
+      600: "#f72e2a",
+      700: "#f72e2a",
+      800: "#f72e2a",
+      900: "#f72e2a",
+    },
+    pillDefaultOutline: {
+      50: "#f7f5f3",
+      100: "#f7f5f3",
+      200: "#f7f5f3",
+      300: "#f7f5f3",
+      400: "#f7f5f3",
+      500: "#202122",
+      600: "#202122",
+      700: "#202122",
+      800: "#202122",
+      900: "#202122",
+    },
+    offWhite: {
+      50: "#f7f5f3",
+      100: "#faf9f9",
+      200: "#eeedec",
+      300: "#e1e0e0",
+      400: "#d4d3d2",
+      500: "#c4c4c3",
+      600: "#b3b3b2",
+      700: "#a0a09f",
+      800: "#898988",
+      900: "#6c6c6c",
     },
     offBlack: {
       50: "#202122",
@@ -48,6 +96,7 @@ export const theme = {
       800: "#003051",
       900: "#001121",
     },
+    mallGreenSingle: "#14c337",
     mallGreen: {
       50: "#e0ffe6",
       100: "#b6f9c3",
@@ -106,19 +155,17 @@ export const theme = {
     initialColorMode: "dark",
   },
   components: {
-    Select: {
+    Badge: {
       baseStyle: ({ colorMode }) => ({
-        customDropdownIconProps: {
-          size: 5,
-          mr: 4,
+        px: 2.5,
+        py: 0.5,
+        _text: {
+          fontSize: "xs",
+          fontWeight: "bold",
         },
-        _actionSheetContent: {},
-        borderWidth: 1,
-        borderColor: colorMode === "dark" ? "#d8d8d8" : "#c8c8c8",
-        color: colorMode === "dark" ? "#d8d8d8" : "#202122",
+        textTransform: "uppercase",
+        borderRadius: 12,
       }),
-      variants: {},
-      sizes: {},
     },
     Button: {
       baseStyle: (props) => ({
@@ -145,6 +192,20 @@ export const theme = {
           opacity: 0.5,
         },
       }),
+    },
+    Select: {
+      baseStyle: ({ colorMode }) => ({
+        customDropdownIconProps: {
+          size: 5,
+          mr: 4,
+        },
+        _actionSheetContent: {},
+        borderWidth: 1,
+        borderColor: colorMode === "dark" ? "#d8d8d8" : "#c8c8c8",
+        color: colorMode === "dark" ? "#d8d8d8" : "#202122",
+      }),
+      variants: {},
+      sizes: {},
     },
   },
 };
