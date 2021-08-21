@@ -19,7 +19,17 @@ import {
   DisplayTypographyHeadings,
   DisplayTypographyText,
   DisplayButtons,
+  DisplaySelect,
 } from './src/display';
+
+const componentList = [
+  'Background',
+  'Colors',
+  'Typography Headings',
+  'Typography Text',
+  'Buttons',
+  'Select',
+];
 
 export default function App() {
   const Theme = extendTheme(theme);
@@ -44,6 +54,8 @@ export default function App() {
                 <DisplayTypographyText />
               ) : display === 'Buttons' ? (
                 <DisplayButtons />
+              ) : display === 'Select' ? (
+                <DisplaySelect />
               ) : null}
             </Box>
           </SafeAreaView>
@@ -64,13 +76,7 @@ const ThemeSelector = ({display, setDisplay}) => (
     marginBottom={8}
     selectedValue={display}
     onValueChange={itemValue => setDisplay(itemValue)}>
-    {[
-      'Background',
-      'Colors',
-      'Typography Headings',
-      'Typography Text',
-      'Buttons',
-    ].map(v => (
+    {componentList.map(v => (
       <Select.Item key={v} label={v} value={v} />
     ))}
   </Select>
