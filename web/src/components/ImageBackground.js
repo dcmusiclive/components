@@ -1,6 +1,6 @@
 import React from "react";
 import { ImageBackground as RNImageBackground } from "react-native";
-import { VStack } from "./Structural";
+import { VStack } from "../components";
 
 export const ImageBackground = ({ image, ...rest }) => (
   <RNImageBackground

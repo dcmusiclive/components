@@ -1,20 +1,13 @@
-import React from 'react';
-import {ImageBackground as RNImageBackground} from 'react-native';
-import {VStack} from './Structural';
+import React from "react";
+import { ImageBackground, ImageLogo1, View } from "../components";
 
-export const ImageBackground = ({image, ...rest}) => (
-  <RNImageBackground
-    source={image}
-    resizeMode="cover"
-    style={{
-      backgroundColor: '#000000',
-      flex: 1,
-      resizeMode: 'cover',
-      justifyContent: 'center',
-    }}
-    imageStyle={{
-      opacity: '0.5',
-    }}>
-    <VStack alignSelf={{base: 'center'}} {...rest} />
-  </RNImageBackground>
+export const DisplayBackground = ({ children }) => (
+  <View style={{ flex: 1 }}>
+    {children}
+    <ImageBackground
+      image={{ uri: "https://api.dcmusic.live/image?asset=farrah-01" }}
+    >
+      <ImageLogo1 />
+    </ImageBackground>
+  </View>
 );

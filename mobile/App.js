@@ -1,18 +1,17 @@
 import React, {useState} from 'react';
 import {theme, colors} from 'common';
+import {useColorMode} from './src/hooks';
 import {
-  extendTheme,
   NativeBaseProvider,
+  extendTheme,
+  SafeAreaView,
+  Box,
+  IconButton,
   Select,
   ScrollView,
-  useColorMode,
-  Tooltip,
-  IconButton,
   SunIcon,
   MoonIcon,
-} from 'native-base';
-import {SafeAreaView} from 'react-native';
-import {Box} from './src/components';
+} from './src/components';
 import {
   DisplayBackground,
   DisplayColors,
@@ -20,6 +19,7 @@ import {
   DisplayTypographyText,
   DisplayButtons,
   DisplaySelect,
+  DisplayPills,
 } from './src/display';
 
 const componentList = [
@@ -29,11 +29,12 @@ const componentList = [
   'Typography Text',
   'Buttons',
   'Select',
+  'Pills',
 ];
 
 export default function App() {
   const Theme = extendTheme(theme);
-  const [display, setDisplay] = useState('Typography Headings');
+  const [display, setDisplay] = useState('Pills');
 
   return (
     <NativeBaseProvider theme={Theme}>
@@ -56,12 +57,14 @@ export default function App() {
                 <DisplayButtons />
               ) : display === 'Select' ? (
                 <DisplaySelect />
+              ) : display === 'Pills' ? (
+                <DisplayPills />
               ) : null}
             </Box>
           </SafeAreaView>
+          <ThemeColorModeSwitch />
         </ScrollView>
       )}
-      <ThemeColorModeSwitch />
     </NativeBaseProvider>
   );
 }
@@ -85,19 +88,13 @@ const ThemeSelector = ({display, setDisplay}) => (
 function ThemeColorModeSwitch() {
   const {colorMode, toggleColorMode} = useColorMode();
   return (
-    <Tooltip
-      openDelay={300}
-      closeOnClick={false}
-      placement="bottom right"
-      label={colorMode === 'dark' ? 'Enable light mode.' : 'Enable dark mode.'}>
-      <IconButton
-        position="absolute"
-        top={12}
-        right={5}
-        onPress={toggleColorMode}
-        icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
-        accessibilityLabel="Color Mode Switch"
-      />
-    </Tooltip>
+    <IconButton
+      position="absolute"
+      top={12}
+      right={5}
+      onPress={toggleColorMode}
+      icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+      accessibilityLabel="Color Mode Switch"
+    />
   );
 }
