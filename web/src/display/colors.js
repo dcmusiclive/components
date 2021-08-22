@@ -1,11 +1,18 @@
 import React from "react";
-import { Heading, Text, Code, Box, VStack, HStack } from "../components";
-import { ScrollView } from "native-base";
+import {
+  Heading,
+  Text,
+  Code,
+  Box,
+  VStack,
+  HStack,
+  ScrollView,
+} from "../components";
 
 const renderSwatch = ({ colorName, swatchOrSwatches }) => {
   return (
     <Box
-      backgroundColor={colorName}
+      backgroundColor={colorName !== "none" ? colorName : "offWhite.400"}
       key={colorName}
       p={5}
       w={180}

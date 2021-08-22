@@ -1,9 +1,23 @@
 import React from 'react';
-import {Heading, Text, Code, Box, VStack} from '../components';
+import {
+  Heading,
+  Text,
+  Code,
+  Box,
+  VStack,
+  HStack,
+  ScrollView,
+} from '../components';
 
 const renderSwatch = ({colorName, swatchOrSwatches}) => {
   return (
-    <Box backgroundColor={colorName} key={colorName} p={5}>
+    <Box
+      backgroundColor={colorName !== 'none' ? colorName : 'offWhite.400'}
+      key={colorName}
+      p={5}
+      w={180}
+      h={180}
+      borderRadius="md">
       <Text>{colorName}</Text>
       <Code>{swatchOrSwatches}</Code>
     </Box>
@@ -13,16 +27,15 @@ const renderSwatch = ({colorName, swatchOrSwatches}) => {
 const renderSwatches = ({colorName, swatchOrSwatches}) => {
   return (
     <VStack>
-      <Text>{colorName}</Text>
-      <VStack>
+      <Text mt={10}>{colorName}</Text>
+      <HStack space={3}>
         {Object.entries(swatchOrSwatches).map(([key, value]) => {
-          console.log(`${colorName}.${key}`);
           return renderSwatch({
             colorName: `${colorName}.${key}`,
             swatchOrSwatches: value,
           });
         })}
-      </VStack>
+      </HStack>
     </VStack>
   );
 };
@@ -39,11 +52,11 @@ const renderAllSwatches = ({themeColors}) => {
   return swatches;
 };
 
-export const DisplayColors = ({colors, theme}) => {
+export const DisplayColors = ({theme}) => {
   return (
-    <>
+    <ScrollView overflowX="scroll" p={10}>
       <Heading>Colors</Heading>
       {renderAllSwatches({themeColors: theme.colors})}
-    </>
+    </ScrollView>
   );
 };

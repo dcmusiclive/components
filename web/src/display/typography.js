@@ -1,6 +1,5 @@
 import React from "react";
-import { VStack } from "native-base";
-import { Heading, Text } from "../components";
+import { Heading, Text, VStack } from "../components";
 
 export const DisplayTypographyHeadings = () => (
   <VStack alignSelf={{ base: "center", md: "flex-start" }} p={10}>

@@ -8,15 +8,15 @@ const theme = {
   colors: {
     offWhite: {
       50: "#f7f5f3",
-      100: "#f7f5f3",
-      200: "#faf9f9",
-      300: "#faf9f9",
-      400: "#eeedec",
-      500: "#eeedec",
-      600: "#eeedec",
-      700: "#eeedec",
-      800: "#eeedec",
-      900: "#eeedec"
+      100: "#faf9f9",
+      200: "#eeedec",
+      300: "#e1e0e0",
+      400: "#d4d3d2",
+      500: "#c4c4c3",
+      600: "#b3b3b2",
+      700: "#a0a09f",
+      800: "#898988",
+      900: "#6c6c6c"
     },
     offBlack: {
       50: "#202122",
@@ -53,6 +53,18 @@ const theme = {
       700: "#005082",
       800: "#003051",
       900: "#001121"
+    },
+    pink: {
+      50: "#ffe2ff",
+      100: "#fdb1ff",
+      200: "#f87fff",
+      300: "#f44cff",
+      400: "#f01aff",
+      500: "#d700e6",
+      600: "#a800b4",
+      700: "#780081",
+      800: "#4a004f",
+      900: "#1c001f"
     },
     mallGreen: {
       50: "#e0ffe6",
@@ -112,21 +124,19 @@ const theme = {
     initialColorMode: "dark"
   },
   components: {
-    Select: {
+    Badge: {
       baseStyle: ({
         colorMode
       }) => ({
-        customDropdownIconProps: {
-          size: 5,
-          mr: 4
+        px: 2.5,
+        py: 0.5,
+        _text: {
+          fontSize: "xs",
+          fontWeight: "bold"
         },
-        _actionSheetContent: {},
-        borderWidth: 1,
-        borderColor: colorMode === "dark" ? "#d8d8d8" : "#c8c8c8",
-        color: colorMode === "dark" ? "#d8d8d8" : "#202122"
-      }),
-      variants: {},
-      sizes: {}
+        textTransform: "uppercase",
+        borderRadius: 12
+      })
     },
     Button: {
       baseStyle: props => ({
@@ -150,6 +160,22 @@ const theme = {
           opacity: 0.5
         }
       })
+    },
+    Select: {
+      baseStyle: ({
+        colorMode
+      }) => ({
+        customDropdownIconProps: {
+          size: 5,
+          mr: 4
+        },
+        _actionSheetContent: {},
+        borderWidth: 1,
+        borderColor: colorMode === "dark" ? "#d8d8d8" : "#c8c8c8",
+        color: colorMode === "dark" ? "#d8d8d8" : "#202122"
+      }),
+      variants: {},
+      sizes: {}
     }
   }
 };

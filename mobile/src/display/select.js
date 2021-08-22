@@ -1,11 +1,11 @@
 import React from 'react';
-import {ScrollView, Select} from 'native-base';
-import {Heading, InputGroup} from '../components';
+import {ScrollView} from 'native-base';
+import {Heading, InputGroup, Select} from '../components';
 
 export const DisplaySelect = () => {
   const states = ['Washington DC', 'Virginia', 'Maryland'];
   return (
-    <ScrollView p={10}>
+    <ScrollView p={5}>
       <Heading mb={5}>Select</Heading>
       <InputGroup
         label="What state do you live in?"

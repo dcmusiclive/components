@@ -1,6 +1,6 @@
 import React from "react";
-import { ScrollView, Select } from "native-base";
-import { Heading, InputGroup } from "../components";
+import { ScrollView } from "native-base";
+import { Heading, InputGroup, Select } from "../components";
 
 export const DisplaySelect = () => {
   const states = ["Washington DC", "Virginia", "Maryland"];

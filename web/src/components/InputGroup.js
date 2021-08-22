@@ -1,6 +1,5 @@
-import { FormControl, HStack } from "native-base";
 import React from "react";
-import { Text } from "./Typography";
+import { Text, HStack, FormControl } from "../components";
 
 export const InputGroup = ({ Input, label, helper, ...rest }) => (
   <FormControl {...rest}>

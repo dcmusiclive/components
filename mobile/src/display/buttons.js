@@ -1,13 +1,13 @@
-import {useColorModeValue} from 'native-base';
 import React from 'react';
-import {Button, Heading, IconOutline, VStack} from '../components';
+import {useColorModeValue} from '../hooks';
+import {Button, Heading, IconOutline, VStack, ScrollView} from '../components';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const DisplayButtons = () => {
   const colorScheme = useColorModeValue('offBlack', 'offWhite');
 
   return (
-    <>
+    <ScrollView p={10}>
       <Heading>Buttons</Heading>
       <VStack space={4} alignItems="center" mt={10}>
         <Button colorScheme={colorScheme} variant="outline">
@@ -46,6 +46,6 @@ export const DisplayButtons = () => {
         </Button>
         <Button colorScheme={colorScheme}>Solid button</Button>
       </VStack>
-    </>
+    </ScrollView>
   );
 };

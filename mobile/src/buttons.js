@@ -1,21 +1,13 @@
-import React from "react";
-import { useColorModeValue, useTheme } from "../hooks";
-import {
-  Button,
-  Heading,
-  IconOutline,
-  VStack,
-  ScrollView,
-  Google,
-  Twitter,
-} from "../components";
+import {useColorModeValue} from 'native-base';
+import React from 'react';
+import {Button, Heading, IconOutline, VStack} from './components';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const DisplayButtons = () => {
-  const colorScheme = useColorModeValue("offBlack", "offWhite");
-  const theme = useTheme();
+  const colorScheme = useColorModeValue('offBlack', 'offWhite');
 
   return (
-    <ScrollView p={10}>
+    <>
       <Heading>Buttons</Heading>
       <VStack space={4} alignItems="center" mt={10}>
         <Button colorScheme={colorScheme} variant="outline">
@@ -26,11 +18,11 @@ export const DisplayButtons = () => {
           variant="outline"
           startIcon={
             <IconOutline
-              web={<Google width={20} color={theme.colors.dcRed[400]} />}
+              name="google"
               color="dcRed.400"
+              as={MaterialCommunityIcons}
             />
-          }
-        >
+          }>
           Open button with icon
         </Button>
         <Button colorScheme={colorScheme}>Solid button</Button>
@@ -45,15 +37,15 @@ export const DisplayButtons = () => {
           variant="outline"
           startIcon={
             <IconOutline
-              web={<Twitter width={20} color={theme.colors.usaBlue[400]} />}
+              name="twitter"
               color="usaBlue.400"
+              as={MaterialCommunityIcons}
             />
-          }
-        >
+          }>
           Open button with icon
         </Button>
         <Button colorScheme={colorScheme}>Solid button</Button>
       </VStack>
-    </ScrollView>
+    </>
   );
 };
