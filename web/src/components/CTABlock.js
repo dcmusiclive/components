@@ -7,7 +7,9 @@ export const CTABlock = ({ imageParam = { asset: "farrah-01" }, buttons }) => {
       style={{
         display: "flex",
         flex: 1,
+        width: "80vw",
         maxWidth: "575px",
+        height: "80vw",
         maxHeight: "575px",
         placeSelf: "center",
       }}
