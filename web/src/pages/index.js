@@ -45,10 +45,7 @@ export default function App() {
           <ThemeSelector display={display} setDisplay={setDisplay} />
         </DisplayBackground>
       ) : (
-        <ScrollView
-          _dark={{ bg: "blueGray.900" }}
-          _light={{ bg: "blueGray.50" }}
-        >
+        <ScrollView _dark={{ bg: "black" }} _light={{ bg: "blueGray.50" }}>
           <SafeAreaView>
             <ThemeSelector display={display} setDisplay={setDisplay} />
             <Box pt={100}>

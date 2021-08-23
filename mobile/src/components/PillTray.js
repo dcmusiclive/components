@@ -4,7 +4,7 @@ import {HStack, Pill, Pressable} from '../components';
 export const PillTray = ({pills, activePill, toggleActivePill}) => (
   <HStack alignItems="flex-start" display="flex" flexWrap="wrap" space={2} mb>
     {pills.map(pill => (
-      <Pressable onPress={() => toggleActivePill(pill.text)}>
+      <Pressable onPress={() => toggleActivePill(pill.text)} key={pill.text}>
         <Pill
           mb={2}
           variant="solid"
