@@ -1,3 +1,33 @@
+const buttonSizes = {
+  lg: {
+    px: 8,
+    py: 3,
+    _text: {
+      fontSize: "lg"
+    }
+  },
+  md: {
+    px: 6,
+    py: 3,
+    _text: {
+      fontSize: "md"
+    }
+  },
+  sm: {
+    px: 4,
+    py: 2,
+    _text: {
+      fontSize: "sm"
+    }
+  },
+  xs: {
+    px: 2,
+    py: 1,
+    _text: {
+      fontSize: "xs"
+    }
+  }
+};
 export const theme = {
   colors: {
     offWhite: {
@@ -133,6 +163,7 @@ export const theme = {
       })
     },
     Button: {
+      sizes: buttonSizes,
       baseStyle: props => ({
         borderRadius: 30,
         flexDirection: "row",

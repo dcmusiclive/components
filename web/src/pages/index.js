@@ -20,6 +20,7 @@ import {
   DisplayButtons,
   DisplaySelect,
   DisplayPills,
+  DisplayCTABlock,
 } from "../display";
 
 const componentList = [
@@ -30,6 +31,7 @@ const componentList = [
   "Buttons",
   "Select",
   "Pills",
+  "CTA Block",
 ];
 
 export default function App() {
@@ -62,6 +64,8 @@ export default function App() {
                 <DisplaySelect />
               ) : display === "Pills" ? (
                 <DisplayPills />
+              ) : display === "CTA Block" ? (
+                <DisplayCTABlock />
               ) : null}
             </Box>
           </SafeAreaView>
