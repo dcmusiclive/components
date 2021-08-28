@@ -22,7 +22,7 @@ export const Pill = ({
           ? isActive
             ? activeColor
             : colorMode === "light"
-            ? "offBlack.400"
+            ? "offBlack.50"
             : baseColor
           : isActive
           ? activeColor
@@ -46,14 +46,14 @@ export const Pill = ({
             ? isActive
               ? activeColor
               : colorMode === "light"
-              ? "offBlack.400"
+              ? "offBlack.50"
               : baseColor
             : isActive
             ? activeColor === "yellow.400"
-              ? "offBlack.400"
+              ? "offBlack.50"
               : "white"
             : baseColor === "offWhite.400"
-            ? "offBlack.400"
+            ? "offBlack.50"
             : "offWhite.400"
         }
       >

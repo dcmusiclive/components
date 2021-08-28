@@ -1,19 +1,34 @@
 import React from 'react';
 import {ImageBackground as RNImageBackground} from 'react-native';
 import {api} from '../constants';
-import {VStack} from './Structural';
+import {VStack} from '.';
 
-export const ImageBackground = ({imageParam, ...rest}) => (
+export const ImageBackground = ({
+  imageParam,
+  imageOpacity = '0.5',
+  backgroundStyle,
+  VStackStyle,
+  ...rest
+}) => (
   <RNImageBackground
     source={{uri: api.endpoint.image(imageParam)}}
     resizeMode="cover"
-    imageStyle={{opacity: 0.5}}
     style={{
+      backgroundColor: '#000000',
       flex: 1,
       resizeMode: 'cover',
       justifyContent: 'center',
-      backgroundColor: '#000000',
+      ...backgroundStyle,
+    }}
+    imageStyle={{
+      opacity: imageOpacity,
     }}>
-    <VStack alignSelf={{base: 'center'}} {...rest} />
+    <VStack
+      alignSelf={{
+        base: 'center',
+      }}
+      style={VStackStyle}
+      {...rest}
+    />
   </RNImageBackground>
 );

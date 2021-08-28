@@ -1,3 +1,33 @@
+const buttonSizes = {
+  lg: {
+    px: 8,
+    py: 3,
+    _text: {
+      fontSize: "lg"
+    }
+  },
+  md: {
+    px: 6,
+    py: 3,
+    _text: {
+      fontSize: "md"
+    }
+  },
+  sm: {
+    px: 4,
+    py: 2,
+    _text: {
+      fontSize: "sm"
+    }
+  },
+  xs: {
+    px: 2,
+    py: 1,
+    _text: {
+      fontSize: "xs"
+    }
+  }
+};
 export const theme = {
   colors: {
     offWhite: {
@@ -133,6 +163,15 @@ export const theme = {
       })
     },
     Button: {
+      sizes: buttonSizes,
+      variants: {
+        outline: function variantOutline(props) {
+          return {
+            borderWidth: 2,
+            ...props
+          };
+        }
+      },
       baseStyle: props => ({
         borderRadius: 30,
         flexDirection: "row",
@@ -164,7 +203,8 @@ export const theme = {
           mr: 4
         },
         _actionSheetContent: {},
-        borderWidth: 1,
+        borderWidth: 2,
+        backgroundColor: colorMode === "dark" ? "#ffffff2e" : "#ffffff2e",
         borderColor: colorMode === "dark" ? "#d8d8d8" : "#c8c8c8",
         color: colorMode === "dark" ? "#d8d8d8" : "#202122"
       }),

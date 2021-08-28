@@ -11,6 +11,7 @@ export const View = require("react-native").View;
 export const SafeAreaView = require("react-native").SafeAreaView;
 
 export * from "./Button";
+export * from "./CTABlock";
 export * from "./Icon";
 export * from "./ImageBackground";
 export * from "./ImageLogo1";
