@@ -21,6 +21,7 @@ import {
   DisplaySelect,
   DisplayPills,
   DisplayCTABlock,
+  DisplayHeader,
 } from './src/display';
 
 const componentList = [
@@ -32,11 +33,12 @@ const componentList = [
   'Select',
   'Pills',
   'CTA Block',
+  'Header',
 ];
 
 export default function App() {
   const Theme = extendTheme(theme);
-  const [display, setDisplay] = useState('Pills');
+  const [display, setDisplay] = useState('Header');
 
   return (
     <NativeBaseProvider theme={Theme}>
@@ -45,7 +47,7 @@ export default function App() {
           <ThemeSelector display={display} setDisplay={setDisplay} />
         </DisplayBackground>
       ) : (
-        <ScrollView _dark={{bg: 'blueGray.900'}} _light={{bg: 'blueGray.50'}}>
+        <ScrollView _dark={{bg: '#000'}} _light={{bg: '#fff'}}>
           <SafeAreaView>
             <ThemeSelector display={display} setDisplay={setDisplay} />
             <Box pt={100}>
@@ -63,6 +65,8 @@ export default function App() {
                 <DisplayPills />
               ) : display === 'CTA Block' ? (
                 <DisplayCTABlock />
+              ) : display === 'Header' ? (
+                <DisplayHeader />
               ) : null}
             </Box>
           </SafeAreaView>

@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, VStack, ImageBackground } from "../components";
+import { Box, VStack } from "native-base";
+import { ImageBackground } from "../components";
 
 export const CTABlock = ({ imageParam = { asset: "farrah-01" }, buttons }) => {
   return (
@@ -30,7 +31,6 @@ export const CTABlock = ({ imageParam = { asset: "farrah-01" }, buttons }) => {
         }}
       >
         <Box
-          id="box"
           style={{
             boxSizing: "border-box",
             margin: 10,
@@ -38,7 +38,7 @@ export const CTABlock = ({ imageParam = { asset: "farrah-01" }, buttons }) => {
             flexGrow: 1,
           }}
           borderColor="offWhite.50"
-          borderWidth={1}
+          borderWidth={2}
           alignItems="center"
           justifyContent="center"
         >

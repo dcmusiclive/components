@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "html-to-image": "^1.7.0",
+    "native-base": "3.1.0"
+  }
+}

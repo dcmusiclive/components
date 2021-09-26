@@ -19,5 +19,6 @@ export * from "./Pill";
 export * from "./PillTray";
 export * from "./Pressable";
 export * from "./InputGroup";
+export * from "./ShowCard";
 export * from "./Structural";
 export * from "./Typography";

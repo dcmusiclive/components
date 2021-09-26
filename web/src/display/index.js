@@ -4,4 +4,5 @@ export * from "./colors";
 export * from "./ctaBlock";
 export * from "./pills";
 export * from "./select";
+export * from "./showcard";
 export * from "./typography";

@@ -210,7 +210,7 @@ const theme = {
         },
         _actionSheetContent: {},
         borderWidth: 2,
-        backgroundColor: colorMode === "dark" ? "#ffffff2e" : "#ffffff2e",
+        backgroundColor: "#ffffff2e",
         borderColor: colorMode === "dark" ? "#d8d8d8" : "#c8c8c8",
         color: colorMode === "dark" ? "#d8d8d8" : "#202122"
       }),

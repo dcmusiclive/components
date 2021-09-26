@@ -1,6 +1,6 @@
 import React from "react";
 import { useColorMode } from "../hooks";
-import { Text, Box } from "../components";
+import { Text, Box } from "native-base";
 
 export const Pill = ({
   baseColor = "offWhite.400",
@@ -14,9 +14,12 @@ export const Pill = ({
   return (
     <Box
       px={2.5}
-      py={1}
+      py={0}
+      minHeight={5}
+      maxHeight={5}
       borderRadius={12}
       borderWidth={1}
+      justifyContent="center"
       borderColor={
         variant === "outline"
           ? isActive
@@ -54,7 +57,7 @@ export const Pill = ({
               : "white"
             : baseColor === "offWhite.400"
             ? "offBlack.50"
-            : "offWhite.400"
+            : "white"
         }
       >
         {children}
